@@ -6,7 +6,7 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "tgi-beangang-pics",
 	"main": ".svelte-kit/cloudflare/_worker.js",
-	"compatibility_flags": ["nodejs_compat_v2"],
+	"compatibility_flags": ["nodejs_compat"],
 	"compatibility_date": "2025-07-12",
 	"assets": {
 		"binding": "ASSETS",

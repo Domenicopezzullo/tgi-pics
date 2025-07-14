@@ -32,6 +32,7 @@
 		"wrangler": "^4.24.3"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-cloudflare": "^7.0.5",
 		"@sveltejs/adapter-node": "^5.2.13",
 		"drizzle-orm": "^0.40.0",
 		"postgres": "^3.4.5"

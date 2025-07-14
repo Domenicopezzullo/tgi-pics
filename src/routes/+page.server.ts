@@ -1,4 +1,3 @@
-// src/routes/your-route/+page.server.ts
 import { db } from "$lib/server/db";
 import { images } from "$lib/server/db/schema";
 import type { Actions } from "@sveltejs/kit";

@@ -1,3 +1,4 @@
+// src/routes/your-route/+page.server.ts
 import { db } from "$lib/server/db";
 import { images } from "$lib/server/db/schema";
 import type { Actions } from "@sveltejs/kit";
@@ -15,10 +16,9 @@ export const actions: Actions = {
         const formData = await request.formData();
         const file = formData.get("image");
 
-        if (!file) {
-            return { error: "No file" };
+        if (!file || typeof file === "string") {
+            return { error: "Invalid file" };
         }
-
 
         const buffer = Buffer.from(await file.arrayBuffer());
         const ext = (file.name.split(".").pop() || "jpg").toLowerCase();

@@ -6,7 +6,6 @@ import { existsSync } from 'fs';
 export const GET: RequestHandler = async ({ params }) => {
   const { filename } = params;
 
-  // Security: prevent directory traversal
   if (!filename || filename.includes('..') || filename.includes('/')) {
     throw error(400, 'Invalid filename');
   }
@@ -36,7 +35,7 @@ export const GET: RequestHandler = async ({ params }) => {
     return new Response(file, {
       headers: {
         'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=31536000' // Cache for 1 year
+        'Cache-Control': 'public, max-age=31536000'
       }
     });
   } catch (err) {

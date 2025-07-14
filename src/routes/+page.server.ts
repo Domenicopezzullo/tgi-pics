@@ -15,9 +15,10 @@ export const actions: Actions = {
         const formData = await request.formData();
         const file = formData.get("image");
 
-        if (!file || typeof file === "string") {
-            return { error: "Invalid file" };
+        if (!file) {
+            return { error: "No file" };
         }
+
 
         const buffer = Buffer.from(await file.arrayBuffer());
         const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
